@@ -18,7 +18,9 @@ describe Article do
 
   describe "#last_comment" do
     it 'returns last comment' do
-    
+      article = create(:article_with_comments)
+      # перевірка
+      expect(article.last_comment.comment).to eq 'comment text 3'
     end
   end
 end
