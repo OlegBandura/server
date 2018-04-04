@@ -1,0 +1,160 @@
+Getting a list of articles
+--------------------------
+
+Parameters:
+  * page - Current page of atricles
+
+Request:
+  GET /api/v1/articles?page=1
+  Accept: application/json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  page=1
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 501
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"7034d1ae012ed19a2a788c671d120dde"
+  X-Request-Id: 24581567-1754-437d-b265-90c47e894b84
+  X-Runtime: 0.027989
+
+  [
+    {
+      "id": 1,
+      "title": "title 0",
+      "text": "comment0",
+      "created_at": "2018-04-04T14:01:59.409Z",
+      "updated_at": "2018-04-04T14:01:59.409Z"
+    },
+    {
+      "id": 2,
+      "title": "title 1",
+      "text": "comment1",
+      "created_at": "2018-04-04T14:01:59.411Z",
+      "updated_at": "2018-04-04T14:01:59.411Z"
+    },
+    {
+      "id": 3,
+      "title": "title 2",
+      "text": "comment2",
+      "created_at": "2018-04-04T14:01:59.414Z",
+      "updated_at": "2018-04-04T14:01:59.414Z"
+    },
+    {
+      "id": 4,
+      "title": "title 3",
+      "text": "comment3",
+      "created_at": "2018-04-04T14:01:59.417Z",
+      "updated_at": "2018-04-04T14:01:59.417Z"
+    }
+  ]
+
+
+Getting the headers
+-------------------
+
+Request:
+  HEAD /api/v1/articles
+  Accept: application/json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+  X-Request-Id: fba02cbf-cc26-4910-a38a-19220acb6422
+  X-Runtime: 0.002429
+
+
+Creating an article
+-------------------
+
+Parameters:
+  * title - atricle title
+  * text - text of article
+
+Request:
+  POST /api/v1/articles
+  Accept: application/json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"article":{"title":"title 2","text":"text1"}}
+
+Response:
+  Status: 201 Created
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 121
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"04d2c42feae740a15b18817a469a3075"
+  X-Request-Id: 205b21a5-39d3-4470-a279-9151cc17f6e4
+  X-Runtime: 0.008155
+
+  {
+    "id": 1,
+    "title": "title 2",
+    "text": "text1",
+    "created_at": "2018-04-04T14:01:59.480Z",
+    "updated_at": "2018-04-04T14:01:59.480Z"
+  }
+
+
+Deleting an article
+-------------------
+
+Request:
+  DELETE /api/v1/articles/1
+  Accept: application/json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {}
+
+Response:
+  Status: 204 No Content
+  Cache-Control: no-cache
+  X-Request-Id: 4cb21ca2-86d0-4992-8fff-edd8c55ddf11
+  X-Runtime: 0.012403
+
+
+Get a specific article
+----------------------
+
+Request:
+  GET /api/v1/articles/2
+  Accept: application/json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {}=
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 121
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"d41a0893badea1c0184ffbca4d45b81d"
+  X-Request-Id: cf9586e0-c17b-4d75-90c5-9e627569bbdd
+  X-Runtime: 0.003271
+
+  {
+    "id": 2,
+    "title": "Book 2",
+    "text": "Text 2",
+    "created_at": "2018-04-04T14:01:59.515Z",
+    "updated_at": "2018-04-04T14:01:59.515Z"
+  }
+
+

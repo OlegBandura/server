@@ -1,0 +1,50 @@
+Getting a list of comments
+--------------------------
+
+Parameters:
+  * page - Current page of comments
+
+Request:
+  GET /api/v1/articles/%3Aarticle_id/comments?page=1
+  Accept: application/json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  page=1
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 2
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+  X-Request-Id: d9986da5-fd59-4276-bb43-f3f27f04361a
+  X-Runtime: 0.005175
+
+  [
+  
+  ]
+
+
+Getting the headers
+-------------------
+
+Request:
+  HEAD /api/v1/articles/3/comments
+  Accept: application/json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Type: application/json; charset=utf-8
+  ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
+  X-Request-Id: 6bdd5c8e-4711-4a84-8505-1a7f8cdd579c
+  X-Runtime: 0.003691
+
+

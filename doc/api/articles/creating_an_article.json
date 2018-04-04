@@ -1,0 +1,54 @@
+{
+  "resource": "Articles",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/api/v1/articles",
+  "description": "Creating an article",
+  "explanation": "First, create an article, then make a later request to get it back",
+  "parameters": [
+    {
+      "required": true,
+      "scope": "article",
+      "name": "title",
+      "description": "atricle title"
+    },
+    {
+      "required": true,
+      "scope": "article",
+      "name": "text",
+      "description": "text of article"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/articles",
+      "request_body": "{\"article\":{\"title\":\"title 2\",\"text\":\"text1\"}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"id\": 1,\n  \"title\": \"title 2\",\n  \"text\": \"text1\",\n  \"created_at\": \"2018-04-04T14:01:59.480Z\",\n  \"updated_at\": \"2018-04-04T14:01:59.480Z\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"04d2c42feae740a15b18817a469a3075\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "205b21a5-39d3-4470-a279-9151cc17f6e4",
+        "X-Runtime": "0.008155",
+        "Content-Length": "121"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/articles\" -d '{\"article\":{\"title\":\"title 2\",\"text\":\"text1\"}}' -X POST \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

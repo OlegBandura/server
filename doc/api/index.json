@@ -1,0 +1,92 @@
+{
+  "resources": [
+    {
+      "name": "Articles",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Creating an article",
+          "link": "articles/creating_an_article.json",
+          "groups": "all",
+          "route": "/api/v1/articles",
+          "method": "post"
+        },
+        {
+          "description": "Deleting an article",
+          "link": "articles/deleting_an_article.json",
+          "groups": "all",
+          "route": "/api/v1/articles/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Get a specific article",
+          "link": "articles/get_a_specific_article.json",
+          "groups": "all",
+          "route": "/api/v1/articles/:id",
+          "method": "get"
+        },
+        {
+          "description": "Getting a list of articles",
+          "link": "articles/getting_a_list_of_articles.json",
+          "groups": "all",
+          "route": "/api/v1/articles",
+          "method": "get"
+        },
+        {
+          "description": "Getting the headers",
+          "link": "articles/getting_the_headers.json",
+          "groups": "all",
+          "route": "/api/v1/articles",
+          "method": "head"
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Getting a list of comments",
+          "link": "comments/getting_a_list_of_comments.json",
+          "groups": "all",
+          "route": "/api/v1/articles/:article_id/comments",
+          "method": "get"
+        },
+        {
+          "description": "Getting the headers",
+          "link": "comments/getting_the_headers.json",
+          "groups": "all",
+          "route": "/api/v1/articles/:article_id/comments",
+          "method": "head"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Creating an user",
+          "link": "users/creating_an_user.json",
+          "groups": "all",
+          "route": "/api/v1/users/create",
+          "method": "post"
+        },
+        {
+          "description": "Deleting an user",
+          "link": "users/deleting_an_user.json",
+          "groups": "all",
+          "route": "/api/v1/user/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Updating an user",
+          "link": "users/updating_an_user.json",
+          "groups": "all",
+          "route": "/api/v1/user/:id",
+          "method": "patch"
+        }
+      ]
+    }
+  ]
+}

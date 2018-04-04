@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  # get 'api/docs' => 'api#docs'
+  get 'api/docs' => 'api#docs'
   post 'user_token' => 'user_token#create'
   namespace 'api' do
     namespace :v1 do

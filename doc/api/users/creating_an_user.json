@@ -1,0 +1,54 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "POST",
+  "route": "/api/v1/users/create",
+  "description": "Creating an user",
+  "explanation": "First, create an user, then make a later request to get it back",
+  "parameters": [
+    {
+      "required": true,
+      "scope": "user",
+      "name": "email",
+      "description": "email"
+    },
+    {
+      "required": true,
+      "scope": "user",
+      "name": "password",
+      "description": "password"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/users/create",
+      "request_body": "{\"user\":{\"email\":\"user1@mail.com\",\"password\":\"pass\"}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 1,\n  \"email\": \"user1@mail.com\",\n  \"password_digest\": \"$2a$04$gQ5bvsr6UJXf55pWPbRLa.QPos/.M5raSvrLkwEigflWXuVNJkBmO\",\n  \"created_at\": \"2018-04-04T14:01:59.639Z\",\n  \"updated_at\": \"2018-04-04T14:01:59.639Z\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"a3fc8be7f5e58cddcef124e6c1507cea\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "1a70cc84-1207-4c3e-a585-82d89832d88d",
+        "X-Runtime": "0.043919",
+        "Content-Length": "194"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/api/v1/users/create\" -d '{\"user\":{\"email\":\"user1@mail.com\",\"password\":\"pass\"}}' -X POST \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

@@ -6,20 +6,14 @@ module Api
 
        def index
       #    render json: { service: 'auth-api', status: 200 }
+      comments = Comment.all
+      render json: comments
        end
 
       def create
         article = Article.find(params[:article_id])
-        comment = article.comments.new(comment_params)
-        if comment.save
-          render json: {
-            status: 'Success', message: 'Comment added', data: comment
-            }, status: :ok
-        else
-          render json: {
-            status: 'Error', message: 'Comment NOT added', data: comment.errors
-            }, status: :unprocessable_enttity
-        end
+        comment = article.comments.create(comment_params)
+        render json: comment, status: 201, url: comment
       end
 
       def auth

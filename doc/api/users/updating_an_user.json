@@ -1,0 +1,49 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "PATCH",
+  "route": "/api/v1/user/:id",
+  "description": "Updating an user",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "user",
+      "name": "email",
+      "description": "user@mail.caom"
+    },
+    {
+      "scope": "user",
+      "name": "password",
+      "description": "1111"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PATCH",
+      "request_path": "/api/v1/user/2",
+      "request_body": "{\"user\":{\"email\":\"new_user@mail.com\"}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "e6cdf9df-7278-430c-bcd1-79f200f2b163",
+        "X-Runtime": "0.012339"
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/api/v1/user/2\" -d '{\"user\":{\"email\":\"new_user@mail.com\"}}' -X PATCH \\\n\t-H \"Accept: application/json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

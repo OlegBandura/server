@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Example App API</title>
-  <meta charset="utf-8">
-  <style>
-    
+  <head>
+    <title>Articles API</title>
+    <meta charset="utf-8">
+    <style>
+      
 body {
   font-family: Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -39,7 +39,7 @@ pre {
 
 td.required .name:after {
   float: right;
-  content: &quot;required&quot;;
+  content: "required";
   font-weight: normal;
   color: #F08080;
 }
@@ -102,60 +102,48 @@ table th, table td {
   text-align: left;
 }
 
-  </style>
-</head>
-<body>
-<div class="container">
-  <h1>Example App API</h1>
-  API Example Description
-  <div class="article">
-    <h2>Articles</h2>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Articles API</h1>
 
-    <ul>
-      <li>
-        <a href="articles/creating_an_article.html">Creating an article</a>
-      </li>
-      <li>
-        <a href="articles/deleting_an_article.html">Deleting an article</a>
-      </li>
-      <li>
-        <a href="articles/get_a_specific_article.html">Get a specific article</a>
-      </li>
-      <li>
-        <a href="articles/getting_a_list_of_articles.html">Getting a list of articles</a>
-      </li>
-      <li>
-        <a href="articles/getting_the_headers.html">Getting the headers</a>
-      </li>
-    </ul>
-  </div>
-  <div class="article">
-    <h2>Comments</h2>
+      <div class="article">
+        <h2>Deleting an article</h2>
+        <h3>DELETE /api/v1/articles/:id</h3>
 
-    <ul>
-      <li>
-        <a href="comments/getting_a_list_of_comments.html">Getting a list of comments</a>
-      </li>
-      <li>
-        <a href="comments/getting_the_headers.html">Getting the headers</a>
-      </li>
-    </ul>
-  </div>
-  <div class="article">
-    <h2>Users</h2>
 
-    <ul>
-      <li>
-        <a href="users/creating_an_user.html">Creating an user</a>
-      </li>
-      <li>
-        <a href="users/deleting_an_user.html">Deleting an user</a>
-      </li>
-      <li>
-        <a href="users/updating_an_user.html">Updating an user</a>
-      </li>
-    </ul>
-  </div>
-</div>
-</body>
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">DELETE /api/v1/articles/1</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{}</pre>
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;http://localhost:3000/api/v1/articles/1&quot; -d &#39;{}&#39; -X DELETE \
+	-H &quot;Accept: application/json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Cache-Control: no-cache
+X-Request-Id: 4cb21ca2-86d0-4992-8fff-edd8c55ddf11
+X-Runtime: 0.012403</pre>
+            <h4>Status</h4>
+            <pre class="response status">204 No Content</pre>
+      </div>
+    </div>
+  </body>
 </html>

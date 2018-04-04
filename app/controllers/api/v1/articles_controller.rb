@@ -4,44 +4,29 @@ module Api
     class ArticlesController < ApplicationController
 
       def index
-
         articles = Article.all
-        render json: {
-          status: 'Success', message: 'Loaded articles', data: articles
-          }, status: :ok
+        render json: articles
       end
 
       def create
-        article = Article.new(article_params)
-        if article.save
-          render json: {
-            status: 'Success', message: 'Saved articles', data: article
-            }, status: :ok
-        else
-          render json: {
-            status: 'Error', message: 'Not saved articles', data: article.errors
-            }, status: :unprocessable_enttity
-        end
+        article = Article.create(article_params)
+        render json: article, status: 201, url: article
       end
 
       def show
-        article = Article.find(params[:id])
-        comment = Comment.where("article_id = ?", article.id)
-        render json: {
-          status: 'Success', message: 'Loaded article & comments', data: [
-            article, comment
-          ]
-          }, status: :ok
-
+        # article = Article.find(params[:id])
+        # comment = Comment.where("article_id = ?", article.id)
+        render json: Article.find(params[:id])
+        # render json: {
+        #   status: 'Success', message: 'Loaded article & comments', data: [
+        #     article, comment
+        #   ]
+        #   }, status: :ok
       end
 
       def destroy
-        @article = Article.where(id: params[:id]).first
-        if @article.destroy
-          head(:ok)
-        else
-          head(:unprocessable_enttity)
-        end
+        Article.find(params[:id]).destroy
+        head 204
       end
 
       def update
@@ -60,7 +45,7 @@ module Api
       private
 
       def article_params
-        params.permit(:title, :text)
+        params.require(:article).permit(:title, :text)
       end
     end
   end
